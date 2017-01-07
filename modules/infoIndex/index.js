@@ -5,23 +5,7 @@ exports.register = function(server, options, next) {
 		  path: '/',
 		  config: { auth: false },
 		  handler: function(request, reply){
-				// reply('here i am')
 				reply.view('infoIndex/index', {title : 'Welcome to Qbila'}, {layout: 'layout'});
-		  }
-		},
-		{
-			method : 'POST',
-			path : '/infoIndex',
-			handler : function(request, reply) {
-
-			}
-		},
-		{
-			method: 'GET',
-		  path: '/samagr',
-		  config: { auth: false },
-		  handler: function(request, reply){
-				reply.view('MACsys/login', {title : 'Welcome to Samagr'}, {layout: 'MACsys'});
 		  }
 		}
 	]);
