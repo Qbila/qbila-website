@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="geoInterface">
+<head>
+
+  <title>{{title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="/public/js/vendor/jquery.js"></script>
+  <script src="/public/js/vendor/lodash.min.js"></script>
+  <script src="/public/js/vendor/angular.min.js"></script>
+  <script src="/public/js/vendor/ui-bootstrap-tpls-2.0.1.min.js"></script>
+  <script src="/public/js/vendor/moment.min.js"></script>
+  <script src="/public/js/modules/mapSpace/geoInterface.js"></script>
+  <script src="public/js/vendor/rzslider/rzslider.min.js"></script>
+
+
+  <link href="/public/js/vendor/rzslider/rzslider.min.css" rel="stylesheet">
+  <link href="/public/css/bootstrap.css" rel="stylesheet" />
+  <link href="/public/css/screen.css" rel="stylesheet" />
+  <link href="/public/css/infoSite.css" rel="stylesheet" />
+  <link href="/public/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div id="wrapper">
+      <!--Sidebar Menus-->
+
+      <!--Dynamic Content-->
+      <div id="page-wrapper">
+        {{{ content }}}
+      </div>
+  </div>
+
+  <!--main Scripts-->
+  <!-- <script src="/public/js/jquery-1.10.2.min.js"></script>-->
+  <script src="/public/js/modules/Formidable/index.js"></script>
+  <script src="/public/js/modules/Formidable/validations.js"></script>
+  <script src="/public/js/vendor/validator.min.js"></script>
+  <script src="/public/js/modules/utils.js"></script>
+
+</body>
+</html>

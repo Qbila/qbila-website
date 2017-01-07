@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app="geoInterface">
+<head>
+
+  <title>{{title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="/public/js/vendor/jquery.js"></script>
+  <script src="/public/js/vendor/angular.min.js"></script>
+  <script src="/public/js/vendor/lodash.min.js"></script>
+  <script src="/public/js/vendor/ui-bootstrap-tpls-2.0.1.min.js"></script>
+  <script src="/public/js/vendor/moment.min.js"></script>
+  <script src="/public/js/modules/mapSpace/geoInterface.js"></script>
+  <script src="/public/js/modules/utils.js"></script>
+
+  <!-- <script src="/public/js/vendor/jstat.min.js"></script> -->
+  <!-- <script src="/public/js/vendor/treeModel.min.js"></script> -->
+  <!-- <script src="/public/js/vendor/d3.v3.js"></script> -->
+  <!-- <script src="/public/js/vendor/nv.d3.js"></script> -->
+
+  <!-- TODO : look for alternatives within angular. If not found find best practices on angular require combination. For now, only load presentation scripts -->
+  <!-- <script src="/public/js/vendor/require.min.js"></script> -->
+
+  <link href="/public/css/bootstrap.css" rel="stylesheet">
+  <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/public/js/vendor/leaflet/leaflet.css" rel="stylesheet">
+  <link href="/public/css/icomoon.css" rel="stylesheet">
+  <link href="/public/css/screen.css" rel="stylesheet">
+  <link href="/public/css/dashboards.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script>
+    var DG = DG || {};
+  </script>
+</head>
+<body>
+<style>
+  body > .d-wrapper, body, html {background: #ffffff;}
+  body {font-family: 'NotoSansEnglish'; font-size: 12px; background: #ffffff;}
+  .qbilaMain {padding-top: 51px;}
+  #page-container {height: 100%;}
+  .qbilaMain .mainContent {
+    margin-left: 220px; padding: 15px; margin-right: 220px;
+  }
+  header .logo {
+    font-size: 25px;
+  }
+  .d-showLoadingAndDisableClick {
+    position: absolute; height: 100%; width: 100%; z-index: 2; background: rgba(255,255,255,0.6); text-align: center; z-index: 1500;
+    display: none; top: 0px;
+  }
+  .d-loading .d-showLoadingAndDisableClick {
+    display: block;
+  }
+  .d-showLoadingAndDisableClick > .d-wrapper {
+    display: none;
+  }
+  .d-showLoadingAndDisableClick.d-withLoading > .d-wrapper {
+    position: absolute; width: 100%; top: 45%; background: transparent; font-size: 18px; font-weight: bold; display: block;
+    color: #808080; font-family: comfortaa;
+  }
+
+  .d-showLoadingAndDisableClick .glyphicon-refresh.spinning {
+    font-size: 30px;
+  }
+
+  .textLabelclass{
+    white-space:nowrap;
+    font-weight: 300;
+    color: black;
+  }
+
+  .mainContent {padding-top: 65px; height: 100%; padding-bottom: 15px; margin-right: 295px;}
+
+</style>
+
+<div class="a-citizenDashboard" id="page-container" ng-controller="Common">
+  {{{ content }}}
+</div>
+
+
+  <!-- TODO : check feasibility of angular bootstrap -->
+  <!-- <script src="/public/js/vendor/bootstrap.js"></script> -->
+  <script>
+    var jqueryOperations = {};
+    // TODO : upgrade to angular and implement using directives
+
+    jqueryOperations.addLoadingOverlay = function(){
+      $('#page-container').addClass('d-loading');
+    }
+
+    jqueryOperations.removeLoadingOverlay = function(){
+      $('#page-container').removeClass('d-loading');
+    }
+  </script>
+
+  <script>
+    if ($.browser && $.browser.msie) {
+      // custom event polyfill for IE9 - IE10
+      (function () {
+        function CustomEvent (event, params) {
+          params = params || { bubbles: false, cancelable: false, detail: undefined };
+          var evt = document.createEvent('CustomEvent');
+          evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+          return evt;
+         };
+        CustomEvent.prototype = window.CustomEvent.prototype;
+        window.CustomEvent = CustomEvent;
+      })();
+    }
+  </script>
+
+<link href="/public/js/vendor/rzslider/rzslider.min.css" rel="stylesheet">
+<script src="/public/js/vendor/rzslider/rzslider.min.js"></script>
+<script src="/public/js/modules/mapSpace/reportWorkspace.js"></script>
+<script src="/public/js/modules/mapSpace/schemes.js"></script>
+<script src="/public/js/modules/Formidable/index.js"></script>
+<script src="/public/js/modules/Formidable/validations.js"></script>
+<script src="/public/js/modules/mapSpace/institution.js"></script>
+<script src="/public/js/modules/mapSpace/modals-bs.js"></script>
+<script src="/public/js/modules/mapSpace/filters.js"></script>
+<script src="/public/js/modules/navigation/navigation.js"></script>
+</body>
+</html>
