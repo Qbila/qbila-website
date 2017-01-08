@@ -5,8 +5,6 @@ const Hapi = require('hapi');
 // const env = require('env2')('./config.env');
 // var Request = require('request');
 
-var setup = 'local';  // 'server'
-
 global.SERVER = new Hapi.Server();
 
 // global.QBILA_WEBSITE = 'http://' + process.env.QBILA_WEBSITE_LOCAL_HOST  + ':' + process.env.QBILA_WEBSITE_LOCAL_PORT;
