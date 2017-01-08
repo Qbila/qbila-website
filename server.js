@@ -2,14 +2,15 @@
 
 const Hapi = require('hapi');
 // const Mongoose = require('mongoose');
-const env = require('env2')('./config.env');
+// const env = require('env2')('./config.env');
 // var Request = require('request');
 
 var setup = 'local';  // 'server'
 
 global.SERVER = new Hapi.Server();
 
-global.QBILA_WEBSITE = 'http://' + process.env.QBILA_WEBSITE_LOCAL_HOST  + ':' + process.env.QBILA_WEBSITE_LOCAL_PORT
+// global.QBILA_WEBSITE = 'http://' + process.env.QBILA_WEBSITE_LOCAL_HOST  + ':' + process.env.QBILA_WEBSITE_LOCAL_PORT;
+
 SERVER.connection({
   host: '127.0.0.1',
   port: '1337'
@@ -18,7 +19,7 @@ SERVER.connection({
 // language for api and status messages. to be made configurable later. Can be used for changing user's language. Hardcoded to be English.
 global.QBILA_WEBSITE = {
   lang: 'en'
-}
+};
 
 // // Mongoose.connect('mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT + '/' + process.env.DB_DB);
 // Mongoose.connect('mongodb://localhost:' + process.env.DB_PORT + '/' + process.env.DB_DB);
